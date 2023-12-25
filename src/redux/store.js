@@ -1,12 +1,19 @@
-// redux/store.js
+import { configureStore } from "@reduxjs/toolkit";
+import { loadFromLocalStorage } from "../Components/LocalStorage";
+import cardReducer from "./flashcards";
+import printReducer from "./print";
+import linkReducer from "./link";
 
-import { createStore, combineReducers } from 'redux';
-import { formReducer } from './reducers';
+// constant to load data from local storage and save it
+const preloadedState = loadFromLocalStorage();
 
-const rootReducer = combineReducers({
-  form: formReducer,
+// store for handling all redux states and loads initial data from constant preloadedState
+export default configureStore({
+  reducer: {
+    //reducerName : imported reducer --format
+    cards: cardReducer,
+    print: printReducer,
+    link: linkReducer,
+  },
+  preloadedState,
 });
-
-const store = createStore(rootReducer);
-
-export default store;

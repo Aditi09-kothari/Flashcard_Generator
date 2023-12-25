@@ -1,19 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux';
-// Example correct import in index.js
-import store from './redux/store';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import "tw-elements";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { saveToLocalStorage } from "./Components/LocalStorage";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+store.subscribe(() => saveToLocalStorage(store.getState())); // calling the function to save the redux state to localstorage
 root.render(
-  <React.StrictMode>
-     <Provider store={store}>
-    <App />
-  </Provider>,
-  </React.StrictMode>
+  <BrowserRouter>
+    <React.StrictMode>
+      {/* provider for redux store */}
+      <Provider store={store}>
+        <App />
+        {/*toast container for toastify toasts */}
+        <ToastContainer />
+      </Provider>
+    </React.StrictMode>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,3 +1,61 @@
+/* calling the tailwind styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* defining the specified styles use in this app.*/
+:root {
+  --color-red: #cc1313;
+  --bg-light-orange: #f5f1ec;
+}
+/*  styles for body of the app */
+body {
+  margin: 30px;
+  background-color: var(--bg-light-orange);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+ /* styles for the navbar */
+.navbar .active {
+  color:  var(--color-red);
+}
+
+.navbar .active::after {
+  right: 0;
+  width: 100%;
+}
+.navbar .navitem:hover::after {
+  right: 0;
+  width: 100%;
+}
+
+.navbar ::after {
+  position: absolute;
+  content: "";
+  right: 90px;
+  height: 3px;
+  background: var(--color-red);
+  border-radius: 4rem;
+  transition: 0.3s;
+  bottom: -4px;
+  width: 0;
+}
+
+.termName .active {
+  color: var(--color-red);
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.iconHover:hover {
+  font-size: 3rem;
+}
+

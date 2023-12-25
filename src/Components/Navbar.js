@@ -1,21 +1,20 @@
-// Navbar.jsx
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
   return (
-    <nav className=" border-b border-gray-300 mt-6 ml-40 mr-40">
-        <h1 className='text-2xl text-black'>Create Flashcard</h1>
-      <div className="custom-container mx-auto flex justify-between mt-2">
-        <div className="flex space-x-4 order-1 ">
-          <Link to="/" className="text-gray-500 border-b-2 border-transparent  hover:text-red-500 hover:border-red-500 navlink" >
-            Create New
-          </Link>
-          <Link to="myflashcard" className="text-gray-500 border-b-2 border-transparent hover:border-red-600 hover:text-red-500 navlink">
-           My Flashcard
-          </Link>
-        </div>
+    <div className="my-5 md:mt-10 px-5 2xl:px-44 xl:px-20 navbar">
+      <h1 className="font-bold text-lg lg:text-2xl">Create Flashcard</h1>
+      <div className="my-5 text-sm md:text-base font-medium font-bold text-slate-500">
+        <NavLink to="/" className="mr-10 relative">
+          Create New
+        </NavLink>
+        <NavLink to="/myflashcard" className="relative">
+          My Flashcard
+        </NavLink>
+        <hr className="border-slate-500" />
       </div>
-    </nav>
+    </div>
   );
 };
 
