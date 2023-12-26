@@ -62,10 +62,9 @@ export default function Terms() {
                     id={`${index}`}
                     ref={addRef}
                     className={`border-slate-400 rounded-md p-2 lg:w-96 md:w-72 bg-gray-100 border text-md`}
-                    placeholder="Please enter a Term Name [Max:15 Chars]"
+                    placeholder="Please enter a Term Name"
                     name={`terms.${index}.termName`}
                     value={formikProps.values.terms[index].termName}
-                    maxLength={15}
                     onChange={(e) => {
                       formikProps.setFieldValue(
                         `terms.${index}.termName`,
@@ -73,11 +72,6 @@ export default function Terms() {
                       );
                     }}
                   />
-                  <span
-                    className={`text-[0.70rem] text-slate-500 duration-[250ms] absolute top-[4rem] md:top-[5rem]`}
-                  >{`Chars left: ${
-                    15 - formikProps.values.terms[index].termName.length
-                  }`}</span>
                   <span className="mx-auto text-sm text-[var(--color-red)]">
                     <ErrorMessage name={`terms.${index}.termName`} />
                   </span>
@@ -89,7 +83,6 @@ export default function Terms() {
                   </span>
                   <Field
                     as="textarea"
-                    maxLength={500}
                     className={`border-slate-400 rounded-md p-2 lg:w-96 md:w-72 resize-none transition-all ease-in-out bg-gray-100 border duration-300 text-md ${
                       term.termDef === ""
                         ? term.termImg === ""
@@ -97,19 +90,10 @@ export default function Terms() {
                           : "h-24"
                         : "h-24"
                     }`}
-                    placeholder="Please enter the Term Definition [Max: 500 Chars]"
+                    placeholder="Please enter the Term Definition"
                     type="text"
                     name={`terms.${index}.termDef`}
                   />
-                  <span
-                    className={`text-[0.70rem] text-slate-500 absolute ${
-                      formikProps.values.terms[index].termDef !== ""
-                        ? "top-[17rem] md:top-[8.2rem]"
-                        : "top-[10rem] md:top-20"
-                    }  duration-[250ms]`}
-                  >{`Chars left: ${
-                    500 - formikProps.values.terms[index].termDef.length
-                  }`}</span>
                   <span className="mx-auto text-sm text-[var(--color-red)]">
                     <ErrorMessage name={`terms.${index}.termDef`} />
                   </span>

@@ -44,7 +44,8 @@ export default function CreateNewFlashcard() {
                       Create Group*
                     </h1>
                     <Field
-                      className="w-80  mt-2 px-2 py-1 border rounded bg-whitesmoke border-gray-500 rounded focus:outline-none"
+                      className="border-slate-400  focus:ring-0 active:ring-0 rounded-md md:w-96 p-2
+                      bg-gray-100 border text-md"
                       type="text"
                       onChange={props.handleChange}
                       onBlur={props.handleBlur}
