@@ -1,7 +1,7 @@
 import React from "react";
 import PrintButton from "./Buttons/PrintButton";
 import DownloadButton from "./Buttons/DownloadButton";
-
+import ShareButton from "./Buttons/ShareButton";
 export default function Buttons() {
   // component to handle all the buttons - share, print and download
   return (
@@ -10,14 +10,7 @@ export default function Buttons() {
         <div className="flex flex-col space-y-4 font-semibold">
           <div className="bg-white">
             {/* calling the share button component */}
-            <div
-              
-              className="hover:bg-[var(--color-red)] text-[var(--color-red)] rounded-md border-[var(--color-red)] border-2 px-6 py-1 w-[16rem] hover:text-white transition-all ease-in-out duration-500 focus:ring-4 shadow-md focus:ring-[var(--color-red)] grid place-content-center"
-            >
-              <div>
-                <span>Share</span>
-              </div>
-            </div>
+            <ShareButton />
           </div>
           <div className="bg-white">
             {/* calling the print button component */}
